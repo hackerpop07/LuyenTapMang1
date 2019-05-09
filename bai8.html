@@ -16,14 +16,11 @@
     if (array.length < 10) {
       array.push(document.getElementById("nhap").value);
     }
-    for (let i = 0; i < array.length; i++) {
-      array.sort(function (a, b) {
-        return a - b;
-      })
-    }
+    array.sort(function (a, b) {
+      return a - b;
+    })
     document.getElementById("nhap").value = "";
     document.getElementById("output").innerHTML = "Array: " + array;
-
   }
 </script>
 </body>
