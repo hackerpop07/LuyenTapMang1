@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h3>Nhập 10 phần tử vào mảng A,B</h3>
+<input id="nhapA" type="text" onkeydown="testA(event)">
+<input id="nhapB" type="text" onkeydown="testB(event)">
+<button id="nhap" onclick="nhap()">Nhập</button>
+<p id="outputA"></p>
+<p id="outputB"></p>
+<p id="outputC"></p>
+<script>
+  var A = [], B = [], C = [];
+
+  function testA(event) {
+    if (event.keyCode == 13) {
+      if (A.length < 10) {
+        A.push(document.getElementById("nhapA").value);
+        document.getElementById("nhapA").value = "";
+      }
+      document.getElementById("outputA").innerHTML = "Mảng A là: " + A;
+    }
+  }
+
+  function testB(event) {
+    if (event.keyCode == 13) {
+      if (B.length < 10) {
+        B.push(document.getElementById("nhapB").value);
+        document.getElementById("nhapB").value = "";
+      }
+    }
+    document.getElementById("outputB").innerHTML = "Mảng B là: " + B;
+  }
+
+  function nhap() {
+    C = [[A], [B]];
+    document.getElementById("outputC").innerHTML = "Nhập Mảng A và B : " + C;
+  }
+</script>
+</body>
+</html>

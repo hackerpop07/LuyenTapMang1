@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bai8</title>
+</head>
+<body>
+<h3>Nhập 10 phần tử vào mảng</h3>
+<input id="nhap" type="number">
+<button id="test" onclick="test()">test</button>
+<p id="output"></p>
+<script>
+  let array = [];
+
+  function test() {
+    if (array.length < 10) {
+      array.push(document.getElementById("nhap").value);
+    }
+    for (let i = 0; i < array.length; i++) {
+      array.sort(function (a, b) {
+        return a - b;
+      })
+    }
+    document.getElementById("nhap").value = "";
+    document.getElementById("output").innerHTML = "Array: " + array;
+
+  }
+</script>
+</body>
+</html>

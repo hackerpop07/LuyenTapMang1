@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bai1,bai2,bai3,bai4,bai5,bai6</title>
+</head>
+<body>
+<p id="hienthi"></p>
+<p id="hienthi2"></p>
+<p id="hienthi1">Các số lớn hơn 10 là: </p>
+<p id="tong"></p>
+<p id="max"></p>
+<p id="tb"></p>
+<p id="NguyenAm"></p>
+<script>
+  let number = [2, 323, 232, 12, 3, 43, 23, 343, -32, -2, -65];
+  document.getElementById("hienthi").innerHTML = "Các số có trong mảng là: " + number;
+  let dem = 0;
+  let b = [];
+  let max = 0;
+  let tb = 0, tong = 0, NguyenAm = [];
+  let nhap = parseInt(prompt("Nhập số cần tìm trong mảng: "));
+  let kq = true;
+  for (let i = 0; i < number.length; i++) {
+    if (number[i] >= 10) {
+      b.push(number[i]);
+      dem++;
+    }
+    if (number[i] > max) {
+      max = number[i];
+    }
+    if (number[i] < 0 && number[i] % 1 == 0) {
+      NguyenAm.push(number[i]);
+    }
+    tb = (tong += number[i]) / number.length;
+    if (nhap == number[i]) {
+      alert(nhap + " is in the array, " + "location: "+i);
+      kq = false;
+    }
+  }
+  if (kq) {
+    alert(nhap + " is not in the array");
+  }
+  document.getElementById("hienthi1").innerHTML += b.join("-");
+  document.getElementById("tong").innerHTML = "Có " + dem + " Số lơn hơn 10";
+  document.getElementById("max").innerHTML = "Số lớn nhất trong mảng là: " + max;
+  document.getElementById("tb").innerHTML = "Trung bình cộng là: " + tb;
+  document.getElementById("hienthi2").innerHTML = "Đảo ngược các số trong mảng: " + number.reverse();
+  document.getElementById("NguyenAm").innerHTML = "Các số nguyên âm trong mảng là " + NguyenAm;
+</script>
+</body>
+</html>

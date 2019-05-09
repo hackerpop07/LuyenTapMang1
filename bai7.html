@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p id="hienthi"></p>
+<p id="xoa"></p>
+<body>
+<script>
+  let nhap=parseInt(prompt("Nhập giá trị cần tìm trong mảng: "));
+  let number = [2, 323, 232, 12, 3, 43, 23, 343, -32, -2, -65];
+  document.getElementById("hienthi").innerHTML = "Các số có trong mảng là: " + number;
+  let kq=true;
+  for (let i=0;i<number.length;i++) {
+    if (nhap==number[i]){
+      number[i]=number[i+1];
+      number[number.length-1]="";
+      kq=false;
+    }
+  }
+  if (kq){
+    alert(nhap + " is not in the array");
+  }
+  document.getElementById("xoa").innerHTML= "Mảng sau khi xóa là: "+number;
+</script>
+</body>
+</html>
