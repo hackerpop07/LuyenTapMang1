@@ -6,20 +6,22 @@
 </head>
 <body>
 <h3>Nhập 10 phần tử vào mảng</h3>
-<input id="nhap" type="number">
+<input id="nhap" type="number" onkeydown="Enter(event)">
 <button id="test" onclick="test()">test</button>
 <p id="output"></p>
 <script>
-  let array = [];
+  var array = [];
 
-  function test() {
-    if (array.length < 10) {
-      array.push(document.getElementById("nhap").value);
+  function Enter(event) {
+    if (event.keyCode == 13) {
+      if (array.length < 10) {
+        array.push(document.getElementById("nhap").value);
+        document.getElementById("nhap").value = "";
+      }
     }
     array.sort(function (a, b) {
       return a - b;
-    })
-    document.getElementById("nhap").value = "";
+    });
     document.getElementById("output").innerHTML = "Array: " + array;
   }
 </script>
